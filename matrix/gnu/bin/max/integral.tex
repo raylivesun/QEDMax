@@ -1,0 +1,101 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 24.02.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[leqno]{amsmath}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+integer um calculor algebra sobre uma soma linear sobre produtos linear da equação compostaobjetos expressivos de sua soma numerica vetores.
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i4)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+qed:\ n+sum(1+ai,a1,a2,an)=a1+a2+an;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{qed} 
+n\mathop{+}\left( \ensuremath{\mathrm{ai}}\mathop{+}1\right) \, \left( \ensuremath{\mathrm{an}}\mathop{-}\ensuremath{\mathrm{a2}}\mathop{+}1\right) \mathop{=}\ensuremath{\mathrm{an}}\mathop{+}\ensuremath{\mathrm{a2}}\mathop{+}\ensuremath{\mathrm{a1}}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+use extandard notação ...
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i5)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+qed1:\ n+product(1+ai,a1,a2,an)=a1+a2+an;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{qed1} 
+n\mathop{+}{{\left( \ensuremath{\mathrm{ai}}\mathop{+}1\right) }^{\ensuremath{\mathrm{an}}\mathop{-}\ensuremath{\mathrm{a2}}\mathop{+}1}}\mathop{=}\ensuremath{\mathrm{an}}\mathop{+}\ensuremath{\mathrm{a2}}\mathop{+}\ensuremath{\mathrm{a1}}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+suma dos vetores lineares e produtos em space linear of calculos lineares algebra em apilidosconstantes para formação de questinamentos em sequences em amortecedores linear de equaçãoobjetivas esfaziando a Q.E.D  das equações linear sobre objectos composivos sobre as equações.
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i9)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+eq:\ qed/qed1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{eq} 
+\frac{n\mathop{+}\left( \ensuremath{\mathrm{ai}}\mathop{+}1\right) \, \left( \ensuremath{\mathrm{an}}\mathop{-}\ensuremath{\mathrm{a2}}\mathop{+}1\right) }{n\mathop{+}{{\left( \ensuremath{\mathrm{ai}}\mathop{+}1\right) }^{\ensuremath{\mathrm{an}}\mathop{-}\ensuremath{\mathrm{a2}}\mathop{+}1}}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+\end{document}

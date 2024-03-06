@@ -1,0 +1,393 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 24.02.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[leqno]{amsmath}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+\pagebreak{}
+{\Huge {\scshape Exercícios}}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{figure}{0}
+
+1.1.1. Resolva os seguintes sistemas de equações lineares reduzindo-os à forma triangular e depoisusando substituição reversa.
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i1)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+a1:\ \ x\ -\ y\ =\ 7;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{a1} 
+x\mathop{-}y\mathop{=}7\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i2)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+a2:\ x\ +\ y2\ =\ 3;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{a2} 
+\ensuremath{\mathrm{y2}}\mathop{+}x\mathop{=}3\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i3)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+b1:\ u6\ +\ v\ =\ 5;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{b1} 
+v\mathop{+}\ensuremath{\mathrm{u6}}\mathop{=}5\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i4)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+b2:\ u3\ +\ v2\ =\ 5;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{b2} 
+\ensuremath{\mathrm{v2}}\mathop{+}\ensuremath{\mathrm{u3}}\mathop{=}5\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i5)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+c1:\ p\ +\ q\ -\ r\ \ =\ 0;\ 
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{c1} 
+\mathop{-}r\mathop{+}q\mathop{+}p\mathop{=}0\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i6)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+c2:\ p2\ -\ q\ +\ r3\ =\ 3;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{c2} 
+\ensuremath{\mathrm{r3}}\mathop{-}q\mathop{+}\ensuremath{\mathrm{p2}}\mathop{=}3\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i7)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+c3:\ -p\ -q\ =\ 6;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{c3} 
+\mathop{-}q\mathop{-}p\mathop{=}6\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i8)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+d1:\ u2\ \ -\ v\ +\ w2\ =\ 2;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{d1} 
+\ensuremath{\mathrm{w2}}\mathop{-}v\mathop{+}\ensuremath{\mathrm{u2}}\mathop{=}2\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i9)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+d2:\ -u\ -v\ +\ w3\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{d2} 
+\ensuremath{\mathrm{w3}}\mathop{-}v\mathop{-}u\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i10)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+d3:\ u3\ -\ w2\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{d3} 
+\ensuremath{\mathrm{u3}}\mathop{-}\ensuremath{\mathrm{w2}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i11)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+e1:\ x5\^\ 1\ +\ x3\^\ 2\ -\ x3\ =\ 9;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{e1} 
+\ensuremath{\mathrm{x5}}\mathop{+}{{\ensuremath{\mathrm{x3}}}^{2}}\mathop{-}\ensuremath{\mathrm{x3}}\mathop{=}9\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i12)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+e2:\ x3\^\ 1\ +\ x2\^\ 2\ -\ x3\ =\ 5;\ 
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{e2} 
+{{\ensuremath{\mathrm{x2}}}^{2}}\mathop{=}5\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i13)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+e3:\ x1\ +\ x2\ +\ x3\ =\ -1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{e3} 
+\ensuremath{\mathrm{x3}}\mathop{+}\ensuremath{\mathrm{x2}}\mathop{+}\ensuremath{\mathrm{x1}}\mathop{=}\mathop{-}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i14)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+f1:\ \ x\ +\ z\ -\ w2\ =\ -3;\ 
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{f1} 
+z\mathop{+}x\mathop{-}\ensuremath{\mathrm{w2}}\mathop{=}\mathop{-}3\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i15)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+f2:\ x2\ -\ y\ \ +\ z2\ -\ w\ =\ -5;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{f2} 
+\ensuremath{\mathrm{z2}}\mathop{-}y\mathop{+}\ensuremath{\mathrm{x2}}\mathop{-}w\mathop{=}\mathop{-}5\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i16)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+f3:\ -y6\ -\ z4\ +\ w2\ =\ 2;\ 
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{f3} 
+\mathop{-}\ensuremath{\mathrm{z4}}\mathop{-}\ensuremath{\mathrm{y6}}\mathop{+}\ensuremath{\mathrm{w2}}\mathop{=}2\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i17)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+f4:\ x\ +\ y3\ +\ z2\ -\ w\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{f4} 
+\ensuremath{\mathrm{z2}}\mathop{+}\ensuremath{\mathrm{y3}}\mathop{+}x\mathop{-}w\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i18)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+g1:\ x3\^\ 1\ +\ x2\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{g1} 
+\ensuremath{\mathrm{x3}}\mathop{+}\ensuremath{\mathrm{x2}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i19)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+g2:\ \ x1\ +\ x3\^\ 2\ +\ x3\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{g2} 
+{{\ensuremath{\mathrm{x3}}}^{2}}\mathop{+}\ensuremath{\mathrm{x3}}\mathop{+}\ensuremath{\mathrm{x1}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i20)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+g3:\ x2\ +\ x3\^\ 3\ +\ x4\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{g3} 
+\ensuremath{\mathrm{x4}}\mathop{+}{{\ensuremath{\mathrm{x3}}}^{3}}\mathop{+}\ensuremath{\mathrm{x2}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i21)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+g4:\ x3\ +\ x3\^\ 4\ =\ 1;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{g4} 
+{{\ensuremath{\mathrm{x3}}}^{4}}\mathop{+}\ensuremath{\mathrm{x3}}\mathop{=}1\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+\end{document}

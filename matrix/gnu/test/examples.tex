@@ -1,0 +1,152 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 24.02.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[leqno]{amsmath}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+são todos exemplos de matrizes. Usamos a notação
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i1)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx:\ matrix([a11,a12,a1n],[a21,a22,a2n],[am1,am2,amn]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx} 
+\begin{pmatrix}\ensuremath{\mathrm{a11}} & \ensuremath{\mathrm{a12}} & \ensuremath{\mathrm{a1n}}\\
+\ensuremath{\mathrm{a21}} & \ensuremath{\mathrm{a22}} & \ensuremath{\mathrm{a2n}}\\
+\ensuremath{\mathrm{am1}} & \ensuremath{\mathrm{am2}} & \ensuremath{\mathrm{amn}}\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+para uma matriz geral de tamanho m × n (leia-se “m por n”), onde m denota o número de linhas emA e n denota o número de colunas. Assim, os exemplos anteriores de matrizes têmrespectivos tamanhos 2 × 3, 4 × 2, 1 × 3, 2 × 1 e 2 × 2. Uma matriz é quadrada se m = n, ou seja,tem o mesmo número de linhas que colunas. Um vetor coluna é uma matriz m × 1, enquanto uma linhavetor é uma matriz 1 × n. Como veremos, os vetores coluna são de longe os mais importantesdos dois, e o termo “vetor” sem qualificação sempre significará “vetor coluna”.Uma matriz 1 × 1, que possui apenas uma única entrada, é um vetor linha e coluna.O número que está na i-ésima linha e na j-ésima coluna de A é chamado de entrada (i, j)de A, e é denotado por aij. O índice da linha sempre aparece primeiro e o índice da colunasegundo.† Duas matrizes são iguais, A = B, se e somente se elas tiverem o mesmo tamanho, digamos m × n,e todas as suas entradas são iguais: aij = bij para i = 1, . . . , m e j = 1, . . . , n.Um sistema linear geral de m equações em n incógnitas assumirá a forma
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+ --\ensuremath{\ensuremath{>}}	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i3)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx2:\ matrix([a11+x1,a12+x2,a1n+x1n],[a21+x1,a22+x2,a2n+x2n]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx2} 
+\begin{pmatrix}\ensuremath{\mathrm{x1}}\mathop{+}\ensuremath{\mathrm{a11}} & \ensuremath{\mathrm{x2}}\mathop{+}\ensuremath{\mathrm{a12}} & \ensuremath{\mathrm{x1n}}\mathop{+}\ensuremath{\mathrm{a1n}}\\
+\ensuremath{\mathrm{x1}}\mathop{+}\ensuremath{\mathrm{a21}} & \ensuremath{\mathrm{x2}}\mathop{+}\ensuremath{\mathrm{a22}} & \ensuremath{\mathrm{x2n}}\mathop{+}\ensuremath{\mathrm{a2n}}\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Como tal, é composto por três ingredientes básicos:a matriz de coeficientesm × n A, comentradas aij como em (1.6), o vetor coluna x =
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i5)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx3:\ matrix([x1],\ [x2],\ [xn]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx3} 
+\begin{pmatrix}\ensuremath{\mathrm{x1}}\\
+\ensuremath{\mathrm{x2}}\\
+\ensuremath{\mathrm{xn}}\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Observação. Usaremos consistentemente letras minúsculas em negrito para denotar vetores, eletras maiúsculas comuns para denotar matrizes gerais.
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i7)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+A\ =\ matrix([2,0,1,3],[-1,2,7,-5],[6,-6,-3,4]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{\% o7} 
+A\mathop{=}\begin{pmatrix}2 & 0 & 1 & 3\\
+\mathop{-}1 & 2 & 7 & \mathop{-}5\\
+6 & \mathop{-}6 & \mathop{-}3 & 4\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+ --\ensuremath{\ensuremath{>}}	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+
+\end{minipage}
+
+\noindent%
+
+\end{document}

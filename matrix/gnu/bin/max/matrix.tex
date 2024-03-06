@@ -1,0 +1,143 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 24.02.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[leqno]{amsmath}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+\pagebreak{}
+{\Huge {\scshape 1.2 Matrizes e Vetores}}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{figure}{0}
+
+Uma matriz é uma matriz retangular de números. Por isso
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i2)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx:\ matrix([1,\ 0,\ 3],\ [-2,\ 4,\ 1]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx} 
+\begin{pmatrix}1 & 0 & 3\\
+\mathop{-}2 & 4 & 1\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i3)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx1:\ matrix([\ensuremath{\pi},\ 0],[e,\ 1/2],[-1,\ .83],[sqrt(5),\ -4/7]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx1} 
+\begin{pmatrix}\ensuremath{\pi}  & 0\\
+e & \frac{1}{2}\\
+\mathop{-}1 & 0.83\\
+\sqrt{5} & \mathop{-}\left( \frac{4}{7}\right) \end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i4)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx2:\ matrix([.2,\ -1.6,\ .32]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx2} 
+\begin{pmatrix}0.2 & \mathop{-}1.6 & 0.32\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i6)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx3:\ matrix([0],[0]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx3} 
+\begin{pmatrix}0\\
+0\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i7)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx4:\ matrix([1,\ 3],[-2,\ 5]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx4} 
+\begin{pmatrix}1 & 3\\
+\mathop{-}2 & 5\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+\end{document}

@@ -1,0 +1,207 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 24.02.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[leqno]{amsmath}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+\pagebreak{}
+{\Huge {\scshape Aritmética Matricial}}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{figure}{0}
+
+A aritmética matricial envolve três operações básicas: adição de matrizes, multiplicação escalar,e multiplicação de matrizes. Primeiro definimos adição de matrizes. Você tem permissão para adicionarduas matrizes somente se elas forem do mesmo tamanho, e a adição de matrizes é realizada por entradaentrada. Por exemplo,
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i1)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx:\ matrix([1,2],[-1,0])+matrix([3,-5],[2,1])=matrix([4,-3],[1,1]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx} 
+\begin{pmatrix}4 & \mathop{-}3\\
+1 & 1\end{pmatrix}\mathop{=}\begin{pmatrix}4 & \mathop{-}3\\
+1 & 1\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Portanto, se A e B são matrizes m × n, sua soma C = A + B é a matriz m × n cujaas entradas são dadas por cij = aij + bij para i = 1, . . . , m e j = 1, . . . , n. Quando definida, matriza adição é comutativa, A + B = B + A, e associativa, A + (B + C) = (A + B) + C,assim como a adição comum.Um escalar é um nome sofisticado para um número comum – o termo apenas o distinguede um vetor ou de uma matriz. Por enquanto, restringiremos nossa atenção aos escalares reaise matrizes com entradas reais, mas eventualmente escalares complexos e matrizes complexas devemser tratado. Identificaremos consistentemente um escalar c \ensuremath{\in} R com a matriz 1 × 1 ( c ) emqual é a única entrada e, portanto, omitirá os parênteses redundantes no último caso.A multiplicação escalar pega um escalar c e uma matriz m × n A e calcula m × nmatriz B = c A multiplicando cada entrada de A por c. Por exemplo,
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i3)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+mtx1:\ matrix([1,2],[-1,0])=matrix([3,3],[-3,0]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{mtx1} 
+\begin{pmatrix}1 & 2\\
+\mathop{-}1 & 0\end{pmatrix}\mathop{=}\begin{pmatrix}3 & 3\\
+\mathop{-}3 & 0\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Em geral, bij = c aij para i = 1, . . . , m e j = 1, . . . , n. Propriedades básicas do escalarmultiplicação estão resumidos no final desta seção.Finalmente, definimos a multiplicação de matrizes. Primeiro, o produto de um vetor linha a e avetor coluna x tendo o mesmo número de entradas é o escalar ou matriz 1 × 1 definidapela seguinte regra:
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i13)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ax:\ matrix([a1,a2,an])\^\ matrix([x1],[x2],[xn])/matrix([a1+x1+a2+x2+an+xn])=sum(mn,k,ak,xk);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{ax} 
+{{\begin{pmatrix}\ensuremath{\mathrm{a1}} & \ensuremath{\mathrm{a2}} & \ensuremath{\mathrm{an}}\end{pmatrix}}^{\begin{pmatrix}\ensuremath{\mathrm{x1}}\\
+\ensuremath{\mathrm{x2}}\\
+\ensuremath{\mathrm{xn}}\end{pmatrix}}} \begin{pmatrix}\frac{1}{\ensuremath{\mathrm{xn}}\mathop{+}\ensuremath{\mathrm{x2}}\mathop{+}\ensuremath{\mathrm{x1}}\mathop{+}\ensuremath{\mathrm{an}}\mathop{+}\ensuremath{\mathrm{a2}}\mathop{+}\ensuremath{\mathrm{a1}}}\end{pmatrix}\mathop{=}\ensuremath{\mathrm{mn}}\, \left( \ensuremath{\mathrm{xk}}\mathop{-}\ensuremath{\mathrm{ak}}\mathop{+}1\right) \mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Mais geralmente, se A é uma matriz m × n e B é uma matriz n × p, de modo que o número decolunas em A é igual ao número de linhas em B, então o produto da matriz C = A B é definidocomo a matriz m × p cuja entrada (i, j) é igual ao produto vetorial da i-ésima linha de A ea j-ésima coluna de B. Portanto,
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i8)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+cij\ =\ sum(mn,k,aik,bkj);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{\% o8} 
+\ensuremath{\mathrm{cij}}\mathop{=}\left( \ensuremath{\mathrm{bkj}}\mathop{-}\ensuremath{\mathrm{aik}}\mathop{+}1\right) \, \ensuremath{\mathrm{mn}}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+Observe que nossa restrição nos tamanhos de A e B garante que a linha e a linha relevantesvetores de coluna terão o mesmo número de entradas e, portanto, seu produto é definido.Por exemplo, o produto da matriz de coeficientes A e do vetor de incógnitas x para nossoo sistema original (1.1) é dado por
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i10)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ax:\ matrix([1,2,1],[2,6,1],[1,1,4])\^\ matrix([x],[y],[z])=matrix([x+y2+z],[x2+y6+z],[x+y+x4]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{ax} 
+{{\begin{pmatrix}1 & 2 & 1\\
+2 & 6 & 1\\
+1 & 1 & 4\end{pmatrix}}^{\begin{pmatrix}x\\
+y\\
+z\end{pmatrix}}}\mathop{=}\begin{pmatrix}z\mathop{+}\ensuremath{\mathrm{y2}}\mathop{+}x\\
+z\mathop{+}\ensuremath{\mathrm{y6}}\mathop{+}\ensuremath{\mathrm{x2}}\\
+y\mathop{+}\ensuremath{\mathrm{x4}}\mathop{+}x\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+O resultado é um vetor coluna cujas entradas reproduzem os lados esquerdos do originalsistema linear! Como resultado, podemos reescrever o sistema
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i14)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+Ax:\ b;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{Ax} 
+b\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+como uma igualdade entre dois vetores coluna. Este resultado é geral; um sistema linear (1.7)consistindo em m equações em n incógnitas pode ser escrita na forma de matriz (1.10), onde Aé a matriz de coeficientes m × n (1.6), x é o vetor coluna n × 1 de incógnitas e b é ovetor coluna m × 1 contendo os lados direitos. Esta é uma das principais razõespara a definição não evidente de multiplicação de matrizes. Multiplicação por componentes deentradas de matriz acabam sendo quase completamente inúteis em aplicativos.Agora, as más notícias. A multiplicação de matrizes não é comutativa - isto é, BA não énecessariamente igual a A B. Por exemplo, BA pode não ser definido mesmo quando A B é. Ainda queambos são definidos, podem ser matrizes de tamanhos diferentes. Por exemplo, o produto s = r cde um vetor linha r, uma matriz 1 × n e um vetor coluna c, uma matriz n × 1 com o mesmonúmero de entradas, é uma matriz 1 × 1, ou escalar, enquanto o produto inverso C = c r é ummatriz n × n. Por exemplo,
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i15)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ax:\ matrix([1,2])\^\ matrix([3],[0])=3;
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{ax} 
+{{\begin{pmatrix}1 & 2\end{pmatrix}}^{\begin{pmatrix}3\\
+0\end{pmatrix}}}\mathop{=}3\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+whereas
+
+
+\noindent
+%%%%%%%%
+%% INPUT:
+\begin{minipage}[t]{4.000000em}\color{red}\bfseries
+(\% i17)	
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+ax:\ matrix([3],[0])\^\ matrix([1,2])=matrix([3,6],[0,0]);
+\end{minipage}
+%%%% OUTPUT:
+\[\displaystyle \tag{ax} 
+{{\begin{pmatrix}3\\
+0\end{pmatrix}}^{\begin{pmatrix}1 & 2\end{pmatrix}}}\mathop{=}\begin{pmatrix}3 & 6\\
+0 & 0\end{pmatrix}\mbox{}
+\]
+%%%%%%%%%%%%%%%%
+\end{document}
